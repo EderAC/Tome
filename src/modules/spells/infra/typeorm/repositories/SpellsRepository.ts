@@ -54,6 +54,15 @@ class SpellsRepository implements ISpellsRepository {
 
     return spells;
   }
+
+  public async findById(id: string): Promise<Spell | undefined> {
+    const spell = await this.ormRepository.findOne({
+      where: { id },
+      relations: ['pcClasses'],
+    });
+
+    return spell;
+  }
 }
 
 export default SpellsRepository;
