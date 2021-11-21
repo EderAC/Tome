@@ -45,6 +45,7 @@ type Query {
   getSpells: [Spell!]
   pcClass(id: ID!): PcClass
   spell(id: ID!): Spell
+  spellByClassId(classId: ID!): [Spell!]
 }
 
 type Spell {

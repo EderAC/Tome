@@ -63,6 +63,16 @@ class SpellsRepository implements ISpellsRepository {
 
     return spell;
   }
+
+  public async findSpellsByClassId(classId: string): Promise<Spell[]> {
+    const spell = await this.ormRepository
+      .createQueryBuilder('spells')
+      .innerJoinAndSelect('spells.pcClasses', 'pcClasses')
+      .where('pcClasses.id = :classId', { classId })
+      .getMany();
+
+    return spell;
+  }
 }
 
 export default SpellsRepository;

@@ -20,4 +20,15 @@ export default class SpellResolver {
     const spell = await ctx.dataSources.spells.findById(id);
     return spell;
   }
+
+  @Query(() => [Spell], { nullable: true })
+  async spellByClassId(
+    @Arg('classId', () => ID)
+    classId: string,
+    @Ctx()
+    ctx: GCtx,
+  ): Promise<Spell[]> {
+    const spells = await ctx.dataSources.spells.findSpellsByClassId(classId);
+    return spells;
+  }
 }
