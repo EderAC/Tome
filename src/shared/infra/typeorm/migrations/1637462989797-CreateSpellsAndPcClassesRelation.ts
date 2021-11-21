@@ -6,7 +6,7 @@ export class CreateSpellsAndPcClassesRelation1637462989797
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'spells_pcclasses_pcclasses',
+        name: 'spells_pc_classes_pcclasses',
         columns: [
           {
             name: 'spellsId',
@@ -36,6 +36,6 @@ export class CreateSpellsAndPcClassesRelation1637462989797
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('spells_pcclasses_pcclasses');
+    await queryRunner.dropTable('spells_pc_classes_pcclasses');
   }
 }

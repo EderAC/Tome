@@ -13,12 +13,13 @@ class SpellsRepository implements ISpellsRepository {
 
   constructor() {
     this.ormRepository = getRepository(Spell);
+    this.ormPcClassRepository = getRepository(PcClass);
   }
 
   public async create({
-    id,
     name,
     school,
+    level,
     cast,
     range,
     component,
@@ -29,9 +30,9 @@ class SpellsRepository implements ISpellsRepository {
   }: ICreateSpellDTO): Promise<Spell> {
     const foundPcClasses = await this.ormPcClassRepository.findByIds(pcClasses);
     const spell = this.ormRepository.create({
-      id,
       name,
       school,
+      level,
       cast,
       range,
       component,

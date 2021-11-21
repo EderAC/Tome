@@ -21,6 +21,7 @@ input CharacterInput {
 type Mutation {
   addCharacter(characterInput: CharacterInput!): Character!
   addPcClass(pcClassInput: PcClassInput!): PcClass!
+  addSpell(spellInput: SpellInput!): Spell!
 }
 
 type PcClass {
@@ -42,4 +43,30 @@ type Query {
   getCharacters: [Character!]
   getPcClasses: [PcClass!]
   pcClass(id: ID!): PcClass
+}
+
+type Spell {
+  cast: String!
+  component: String!
+  description: String!
+  duration: String!
+  level: String!
+  material: String!
+  name: String!
+  pcClasses: [PcClass!]!
+  range: String!
+  school: String!
+}
+
+input SpellInput {
+  cast: String!
+  component: String!
+  description: String!
+  duration: String!
+  level: String!
+  material: String!
+  name: String!
+  pcClasses: [String!]!
+  range: String!
+  school: String!
 }

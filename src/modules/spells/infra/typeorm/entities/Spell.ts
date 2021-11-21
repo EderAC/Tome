@@ -21,6 +21,9 @@ class Spell {
   school: string;
 
   @Column()
+  level: string;
+
+  @Column()
   cast: string;
 
   @Column()

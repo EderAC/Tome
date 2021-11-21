@@ -22,6 +22,10 @@ export class CreateSpells1637462600455 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'level',
+            type: 'varchar',
+          },
+          {
             name: 'cast',
             type: 'varchar',
           },
