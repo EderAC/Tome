@@ -20,6 +20,22 @@ input CharacterInput {
 
 type Mutation {
   addCharacter(characterInput: CharacterInput!): Character!
+  addPcClass(pcClassInput: PcClassInput!): PcClass!
+}
+
+type PcClass {
+  description: String!
+  hitDice: String!
+  id: String!
+  name: String!
+  primaryAbility: String!
+}
+
+input PcClassInput {
+  description: String!
+  hitDice: String!
+  name: String!
+  primaryAbility: String!
 }
 
 type Query {

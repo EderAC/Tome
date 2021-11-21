@@ -15,7 +15,13 @@ class Character {
   name: string;
 
   @Column()
+  description: string;
+
+  @Column()
   hitDice: string;
+
+  @Column()
+  primaryAbility: string;
 
   @CreateDateColumn()
   created_at: Date;
