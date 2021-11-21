@@ -2,7 +2,7 @@ import { container } from 'tsyringe';
 import { DataSource } from 'apollo-datasource';
 
 import CreateSpellService from '@modules/spells/services/CreateSpellService';
-// import FindAllSpellsService from '@modules/spells/services/FindAllSpellsService';
+import FindAllSpellsService from '@modules/spells/services/FindAllSpellsService';
 import { GCtx } from '../graphql/context';
 
 interface IRequest {
@@ -47,9 +47,9 @@ export class Spells extends DataSource<GCtx> {
     return spell;
   }
 
-  // public async findAll() {
-  //   const findAllSpells = container.resolve(FindAllSpellsService);
-  //   const spells = await findAllSpells.execute();
-  //   return spells;
-  // }
+  public async findAll() {
+    const findAllSpells = container.resolve(FindAllSpellsService);
+    const spells = await findAllSpells.execute();
+    return spells;
+  }
 }

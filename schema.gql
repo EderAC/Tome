@@ -42,6 +42,7 @@ input PcClassInput {
 type Query {
   getCharacters: [Character!]
   getPcClasses: [PcClass!]
+  getSpells: [Spell!]
   pcClass(id: ID!): PcClass
 }
 
@@ -50,6 +51,7 @@ type Spell {
   component: String!
   description: String!
   duration: String!
+  id: String!
   level: String!
   material: String!
   name: String!

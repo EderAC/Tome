@@ -5,6 +5,9 @@ import { PcClass } from '../pc-classes/pc-class.types';
 @ObjectType()
 export class Spell {
   @Field()
+  id: string;
+
+  @Field()
   name: string;
 
   @Field()

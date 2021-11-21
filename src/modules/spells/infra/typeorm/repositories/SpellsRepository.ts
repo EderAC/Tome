@@ -48,7 +48,9 @@ class SpellsRepository implements ISpellsRepository {
   }
 
   public async findAll(): Promise<Spell[]> {
-    const spells = await this.ormRepository.find();
+    const spells = await this.ormRepository.find({
+      relations: ['pcClasses'],
+    });
 
     return spells;
   }
