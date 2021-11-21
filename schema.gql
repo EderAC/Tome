@@ -40,4 +40,5 @@ input PcClassInput {
 
 type Query {
   getCharacters: [Character!]
+  getPcClasses: [PcClass!]
 }

@@ -2,7 +2,7 @@ import { container } from 'tsyringe';
 import { DataSource } from 'apollo-datasource';
 
 import CreatePcClassService from '@modules/pc-classes/services/CreatePcClassService';
-// import FindAllPcClassesService from '@modules/pc-classes/services/FindAllPcClassesService';
+import FindAllPcClassesService from '@modules/pc-classes/services/FindAllPcClassesService';
 import { GCtx } from '../graphql/context';
 
 export class PcClasses extends DataSource<GCtx> {
@@ -23,9 +23,9 @@ export class PcClasses extends DataSource<GCtx> {
     return pcClass;
   }
 
-  // public async findAll() {
-  //   const findAllPcClasses = container.resolve(FindAllPcClassesService);
-  //   const pcClasss = await findAllPcClasses.execute();
-  //   return pcClasss;
-  // }
+  public async findAll() {
+    const findAllPcClasses = container.resolve(FindAllPcClassesService);
+    const pcClasses = await findAllPcClasses.execute();
+    return pcClasses;
+  }
 }

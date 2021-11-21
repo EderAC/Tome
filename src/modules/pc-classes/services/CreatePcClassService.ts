@@ -14,7 +14,7 @@ interface IRequest {
 class CreatePcClassService {
   constructor(
     @inject('PcClassesRepository')
-    private pcClasssRepository: IPcClassesRepository,
+    private pcClassesRepository: IPcClassesRepository,
   ) {}
 
   public async execute({
@@ -23,7 +23,7 @@ class CreatePcClassService {
     hitDice,
     primaryAbility,
   }: IRequest): Promise<PcClass> {
-    const pcClass = await this.pcClasssRepository.create({
+    const pcClass = await this.pcClassesRepository.create({
       name,
       description,
       hitDice,
