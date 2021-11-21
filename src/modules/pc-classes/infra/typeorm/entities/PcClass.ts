@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 
 @Entity('pcclasses')
-class Character {
+class PcClass {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -30,4 +30,4 @@ class Character {
   updated_at: Date;
 }
 
-export default Character;
+export default PcClass;

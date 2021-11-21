@@ -37,7 +37,7 @@ class PcClassesRepository implements IPcClassesRepository {
   }
 
   public async findById(id: string): Promise<PcClass | undefined> {
-    const pcClass = await this.ormRepository.findOne({ where: id });
+    const pcClass = await this.ormRepository.findOne({ where: { id } });
 
     return pcClass;
   }

@@ -3,6 +3,7 @@ import { DataSource } from 'apollo-datasource';
 
 import CreatePcClassService from '@modules/pc-classes/services/CreatePcClassService';
 import FindAllPcClassesService from '@modules/pc-classes/services/FindAllPcClassesService';
+import FindPcClassByIdService from '@modules/pc-classes/services/FindPcClassByIdService';
 import { GCtx } from '../graphql/context';
 
 export class PcClasses extends DataSource<GCtx> {
@@ -27,5 +28,11 @@ export class PcClasses extends DataSource<GCtx> {
     const findAllPcClasses = container.resolve(FindAllPcClassesService);
     const pcClasses = await findAllPcClasses.execute();
     return pcClasses;
+  }
+
+  public async findById(id: string) {
+    const findPcClassById = container.resolve(FindPcClassByIdService);
+    const pcClass = await findPcClassById.execute(id);
+    return pcClass;
   }
 }
