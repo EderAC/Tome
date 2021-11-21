@@ -18,7 +18,6 @@ export default class PcClassResolver {
     ctx: GCtx,
   ): Promise<PcClass | undefined> {
     const pcClass = await ctx.dataSources.pcClasses.findById(id);
-    console.log(pcClass);
     return pcClass;
   }
 }
