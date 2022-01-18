@@ -3,4 +3,5 @@ export default interface ICreateCharacterDTO {
   pcClass: string;
   level: string;
   race: string;
+  user_id: string;
 }

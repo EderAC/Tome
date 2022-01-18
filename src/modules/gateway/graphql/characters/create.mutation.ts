@@ -1,9 +1,38 @@
-import { Resolver, Mutation, Arg, InputType, Field, Ctx } from 'type-graphql';
+import {
+  Resolver,
+  Mutation,
+  Arg,
+  InputType,
+  Field,
+  Ctx,
+  ObjectType,
+} from 'type-graphql';
 import { Character } from './character.types';
 import { GCtx } from '../context';
 
 @InputType()
-export class CharacterInput implements Partial<Character> {
+class CharacterInput implements Partial<Character> {
+  @Field()
+  name: string;
+
+  @Field()
+  pcClass: string;
+
+  @Field()
+  level: string;
+
+  @Field()
+  race: string;
+
+  @Field()
+  user_id: string;
+}
+
+@ObjectType()
+class characterPayload {
+  @Field()
+  id: string;
+
   @Field()
   name: string;
 
@@ -17,18 +46,20 @@ export class CharacterInput implements Partial<Character> {
   race: string;
 }
 
-@Resolver(() => Character)
+@Resolver()
 export default class CharacterResolver {
-  @Mutation(() => Character)
+  @Mutation(() => characterPayload)
   async addCharacter(
-    @Arg('characterInput') { name, pcClass, level, race }: CharacterInput,
+    @Arg('characterInput')
+    { name, pcClass, level, race, user_id }: CharacterInput,
     @Ctx() ctx: GCtx,
-  ): Promise<Character> {
+  ): Promise<characterPayload> {
     const character = await ctx.dataSources.characters.create(
       name,
       pcClass,
       level,
       race,
+      user_id,
     );
 
     return character;

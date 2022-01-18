@@ -8,6 +8,7 @@ interface IRequest {
   pcClass: string;
   level: string;
   race: string;
+  user_id: string;
 }
 
 @injectable()
@@ -22,12 +23,14 @@ class CreateCharacterService {
     pcClass,
     level,
     race,
+    user_id,
   }: IRequest): Promise<Character> {
     const character = await this.charactersRepository.create({
       name,
       pcClass,
       level,
       race,
+      user_id,
     });
 
     return character;

@@ -1,4 +1,5 @@
 import { Field, ObjectType } from 'type-graphql';
+import { User } from '../users/user.types';
 
 @ObjectType()
 export class Character {
@@ -16,4 +17,7 @@ export class Character {
 
   @Field()
   race!: string;
+
+  @Field(() => User)
+  user!: User;
 }

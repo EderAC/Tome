@@ -40,6 +40,7 @@ async function init() {
     schema,
     dataSources: createDataSources,
   });
+
   await server.start();
 
   server.applyMiddleware({ app });

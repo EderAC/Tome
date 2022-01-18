@@ -17,16 +17,24 @@ class CharactersRepository implements ICharactersRepository {
     name,
     pcClass,
     race,
+    user_id,
   }: ICreateCharacterDTO): Promise<Character> {
-    const character = this.ormRepository.create({ name, pcClass, level, race });
-
+    const character = this.ormRepository.create({
+      name,
+      pcClass,
+      level,
+      race,
+      user_id,
+    });
     await this.ormRepository.save(character);
 
     return character;
   }
 
   public async findAll(): Promise<Character[]> {
-    const characters = await this.ormRepository.find();
+    const characters = await this.ormRepository.find({
+      relations: ['user'],
+    });
 
     return characters;
   }

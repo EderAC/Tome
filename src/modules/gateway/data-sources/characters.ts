@@ -6,14 +6,22 @@ import FindAllCharactersService from '@modules/characters/services/FindAllCharac
 import { GCtx } from '../graphql/context';
 
 export class Characters extends DataSource<GCtx> {
-  async create(name: string, pcClass: string, level: string, race: string) {
+  async create(
+    name: string,
+    pcClass: string,
+    level: string,
+    race: string,
+    user_id: string,
+  ) {
     const createCharacter = container.resolve(CreateCharacterService);
     const character = await createCharacter.execute({
       name,
       pcClass,
       level,
       race,
+      user_id,
     });
+
     return character;
   }
 
