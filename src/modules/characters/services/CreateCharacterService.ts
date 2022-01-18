@@ -1,3 +1,4 @@
+import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 
 import Character from '../infra/typeorm/entities/Character';
@@ -25,6 +26,15 @@ class CreateCharacterService {
     race,
     user_id,
   }: IRequest): Promise<Character> {
+    const checkCharacterExists = await this.charactersRepository.findByName(
+      name,
+      user_id,
+    );
+
+    if (checkCharacterExists) {
+      throw new AppError('You already have a character with this name.');
+    }
+
     const character = await this.charactersRepository.create({
       name,
       pcClass,

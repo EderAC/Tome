@@ -38,6 +38,15 @@ class CharactersRepository implements ICharactersRepository {
 
     return characters;
   }
+
+  public async findByName(
+    name: string,
+    user_id: string,
+  ): Promise<Character | undefined> {
+    const characters = await this.ormRepository.findOne({ name, user_id });
+
+    return characters;
+  }
 }
 
 export default CharactersRepository;
