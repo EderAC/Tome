@@ -25,6 +25,7 @@ type Mutation {
   addPcClass(pcClassInput: PcClassInput!): PcClass!
   addSpell(spellInput: SpellInput!): Spell!
   addUser(userInput: UserInput!): User!
+  fillDB: Spell!
 }
 
 type PcClass {

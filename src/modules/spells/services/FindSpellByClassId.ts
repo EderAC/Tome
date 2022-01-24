@@ -4,7 +4,7 @@ import Spell from '../infra/typeorm/entities/Spell';
 import ISpellsRepository from '../repositories/ISpellsRepository';
 
 @injectable()
-class findSpellsByClassIdService {
+class FindSpellsByClassIdService {
   constructor(
     @inject('SpellsRepository')
     private spellsRepository: ISpellsRepository,
@@ -15,4 +15,4 @@ class findSpellsByClassIdService {
   }
 }
 
-export default findSpellsByClassIdService;
+export default FindSpellsByClassIdService;

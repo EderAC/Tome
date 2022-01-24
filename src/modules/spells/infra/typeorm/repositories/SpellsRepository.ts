@@ -1,4 +1,4 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, In, Repository } from 'typeorm';
 
 import ISpellsRepository from '@modules/spells/repositories/ISpellsRepository';
 
@@ -28,7 +28,9 @@ class SpellsRepository implements ISpellsRepository {
     description,
     pcClasses,
   }: ICreateSpellDTO): Promise<Spell> {
-    const foundPcClasses = await this.ormPcClassRepository.findByIds(pcClasses);
+    const foundPcClasses = await this.ormPcClassRepository.find({
+      name: In(pcClasses),
+    });
     const spell = this.ormRepository.create({
       name,
       school,

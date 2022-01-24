@@ -4,7 +4,8 @@ import { DataSource } from 'apollo-datasource';
 import CreateSpellService from '@modules/spells/services/CreateSpellService';
 import FindAllSpellsService from '@modules/spells/services/FindAllSpellsService';
 import FindSpellByIdService from '@modules/spells/services/FindSpellByIdService';
-import findSpellsByClassIdService from '@modules/spells/services/FindSpellByClassId';
+import FindSpellsByClassIdService from '@modules/spells/services/FindSpellByClassId';
+import FillDBService from '@modules/spells/services/FillDBService';
 import { GCtx } from '../graphql/context';
 
 interface IRequest {
@@ -62,8 +63,13 @@ export class Spells extends DataSource<GCtx> {
   }
 
   public async findSpellsByClassId(classId: string) {
-    const findSpellsByClassId = container.resolve(findSpellsByClassIdService);
+    const findSpellsByClassId = container.resolve(FindSpellsByClassIdService);
     const spells = await findSpellsByClassId.execute(classId);
     return spells;
+  }
+
+  public async fillDb() {
+    const fillDB = container.resolve(FillDBService);
+    await fillDB.execute();
   }
 }
