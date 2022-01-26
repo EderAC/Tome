@@ -26,6 +26,7 @@ type Mutation {
   addSpell(spellInput: SpellInput!): Spell!
   addUser(userInput: UserInput!): User!
   fillDB: Spell!
+  userAuth(userAuthInput: UserAuthInput!): UserAuth!
 }
 
 type PcClass {
@@ -83,6 +84,16 @@ input SpellInput {
 
 type User {
   id: String!
+  name: String!
+  password: String!
+}
+
+type UserAuth {
+  token: String!
+  user: User!
+}
+
+input UserAuthInput {
   name: String!
   password: String!
 }
