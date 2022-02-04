@@ -4,10 +4,10 @@
     "target": "es2017",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./dist",
     "strict": true,
     "strictPropertyInitialization": false,
-    "baseUrl": "./src",
+    "baseUrl": "./dist",
     "paths": {
         "@modules/*":["modules/*"],
         "@config/*":["config/*"],
