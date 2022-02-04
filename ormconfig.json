@@ -5,6 +5,9 @@
   "username": "uvmklkhdcfluvo",
   "password": "6118f0632e97e1b994a6ecaf32d6e3c0d1e87d48f8febf39d4e07c7509ec60a8",
   "database": "d5eicci3n81icj",
+  "dialectOptions": {
+    "ssl": true
+  },
   "extra": {
     "ssl": {
       "rejectUnauthorized": false
