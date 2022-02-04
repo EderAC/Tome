@@ -10,9 +10,9 @@
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "_moduleAliases": {
-    "@modules":"dist/modules",
-    "@config":"dist/config",
-    "@shared":"dist/shared"
+    "@modules":"dist/modules/",
+    "@config":"dist/config/",
+    "@shared":"dist/shared/"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
