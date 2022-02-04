@@ -1,10 +1,10 @@
 {
   "type": "postgres",
-  "host": "ec2-75-101-141-195.compute-1.amazonaws.com",
+  "host": "localhost",
   "port": 5432,
-  "username": "uvmklkhdcfluvo",
-  "password": "6118f0632e97e1b994a6ecaf32d6e3c0d1e87d48f8febf39d4e07c7509ec60a8",
-  "database": "d5eicci3n81icj",
+  "username": "postgres",
+  "password": "eder@raizs2021",
+  "database": "dnd_tome",
   "entities": [
       "./src/modules/**/infra/typeorm/entities/*.ts"
   ],
