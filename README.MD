@@ -15,28 +15,3 @@
       "migrationsDir":"./src/shared/infra/typeorm/migrations/"
   }
 }
-
-
-
-{
-  "compilerOptions": {
-
-    "target": "es2017",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "baseUrl": "./src",
-    "paths": {
-        "@modules/*":["modules/*"],
-        "@config/*":["config/*"],
-        "@shared/*":["shared/*"]
-    },
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
-}

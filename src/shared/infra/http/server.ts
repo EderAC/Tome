@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 
+import 'module-alias/register';
+
 import { ApolloServer } from 'apollo-server-express';
 
 import express, { Request, Response, NextFunction } from 'express';
@@ -10,6 +12,7 @@ import AppError from '@shared/errors/AppError';
 
 import '@shared/infra/typeorm';
 import '@shared/Container';
+
 import { schema } from '@modules/gateway/graphql';
 import { createDataSources } from '@modules/gateway/data-sources';
 
