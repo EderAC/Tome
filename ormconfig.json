@@ -5,11 +5,16 @@
   "username": "uvmklkhdcfluvo",
   "password": "6118f0632e97e1b994a6ecaf32d6e3c0d1e87d48f8febf39d4e07c7509ec60a8",
   "database": "d5eicci3n81icj",
+  "extra": {
+    "ssl": {
+      "rejectUnauthorized": false
+    }
+  },
   "entities": [
-      "./src/modules/**/infra/typeorm/entities/*.ts"
+      "./dist/modules/**/infra/typeorm/entities/*.ts"
   ],
   "migrations": [
-      "./src/shared/infra/typeorm/migrations/*.ts"
+      "./dist/shared/infra/typeorm/migrations/*.ts"
   ],
   "cli": {
       "migrationsDir":"./src/shared/infra/typeorm/migrations/"
