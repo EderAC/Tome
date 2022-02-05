@@ -1,4 +1,3 @@
-import PcClass from '@modules/pc-classes/infra/typeorm/entities/PcClass';
 import {
   Entity,
   Column,
@@ -8,6 +7,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
+import PcClass from '../../../../pc-classes/infra/typeorm/entities/PcClass';
 
 @Entity('spells')
 class Spell {
