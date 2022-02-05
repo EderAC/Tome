@@ -71,6 +71,7 @@ class SpellsRepository implements ISpellsRepository {
       .createQueryBuilder('spells')
       .innerJoinAndSelect('spells.pcClasses', 'pcClasses')
       .where('pcClasses.id = :classId', { classId })
+      .orderBy('spells.level', 'ASC')
       .getMany();
 
     return spell;
